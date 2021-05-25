@@ -58,6 +58,9 @@ class Game {
         cars[index-1].x=x;
         cars[index-1].y=y;
         if(index===player.index){
+          stroke(10);
+          fill("red");
+          ellipse(x,y,70, 70);
           cars[index-1].shapeColor="red";
           camera.position.x=displayWidth/2;
           camera.position.y=cars[index-1].y;
@@ -69,8 +72,10 @@ class Game {
       player.distance +=10
       player.update();
     }
-    if(player.distance>3700){
+    if(player>3700){
       gameState=2;
+      
+
     }
     drawSprites();
   }
